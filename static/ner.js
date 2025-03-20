@@ -9,8 +9,6 @@ const fetchResult = (sentence) => {
             return Promise.reject(response);
         }
         let result = await response.json();
-        let labeledDoc = document.getElementById('labeled-doc')
-        labeledDoc.innerHTML = result.html;
         return buildNerTable(result.entities);
     }).catch((error) => {
         console.error('Something went wrong.', error);

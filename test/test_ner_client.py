@@ -38,7 +38,7 @@ class TestNerClient(unittest.TestCase):
         # When
         result = ner.get_ents('...')
         # Then
-        expected_results = {'ents': [{'ent': 'Denis Baltor', 'label': 'Person'}], 'html': '<span>...'}
+        expected_results = {'ents': [{'ent': 'Denis Baltor', 'label': 'Person'}] }
         self.assertListEqual(result['ents'], expected_results['ents'])
 
     def test_get_ents_given_spacy_NORP_is_returned_serialises_to_Group(self):
@@ -50,7 +50,7 @@ class TestNerClient(unittest.TestCase):
         # When
         result = ner.get_ents('...')
         # Then
-        expected_results = {'ents': [{'ent': 'Portuguese', 'label': 'Group'}], 'html': '<span>...'}
+        expected_results = {'ents': [{'ent': 'Portuguese', 'label': 'Group'}] }
         self.assertListEqual(result['ents'], expected_results['ents'])
 
 
@@ -63,7 +63,7 @@ class TestNerClient(unittest.TestCase):
         # When
         result = ner.get_ents('...')
         # Then
-        expected_results = {'ents': [{'ent': 'the ocean', 'label': 'Location'}], 'html': '<span>...'}
+        expected_results = {'ents': [{'ent': 'the ocean', 'label': 'Location'}] }
         self.assertListEqual(result['ents'], expected_results['ents'])
 
 
@@ -76,7 +76,7 @@ class TestNerClient(unittest.TestCase):
         # When
         result = ner.get_ents('...')
         # Then
-        expected_results = {'ents': [{'ent': 'ASL', 'label': 'Language'}], 'html': '<span>...'}
+        expected_results = {'ents': [{'ent': 'ASL', 'label': 'Language'}] }
         self.assertListEqual(result['ents'], expected_results['ents'])
 
     def test_get_ents_given_spacy_GPE_is_returned_serialises_to_Location(self):
@@ -88,7 +88,7 @@ class TestNerClient(unittest.TestCase):
         # When
         result = ner.get_ents('...')
         # Then
-        expected_results = {'ents': [{'ent': 'Portugal', 'label': 'Location'}], 'html': '<span>...'}
+        expected_results = {'ents': [{'ent': 'Portugal', 'label': 'Location'}] }
         self.assertListEqual(result['ents'], expected_results['ents'])
 
     def test_page_has_ner_table(self):
@@ -101,5 +101,5 @@ class TestNerClient(unittest.TestCase):
         result = ner.get_ents('...')
         # Then
         expected_results = {'ents': [{'ent': 'Portugal', 'label': 'Location'},
-                                     {'ent': 'Denis Baltor','label': 'Person'}], 'html': '<span>...'}
+                                     {'ent': 'Denis Baltor','label': 'Person'}] }
         self.assertListEqual(result['ents'], expected_results['ents'])

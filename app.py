@@ -16,7 +16,7 @@ def index():
 def get_named_ents():
     data = request.get_json()
     result = ner.get_ents(data['sentence'])
-    response = { 'entities': result.get('ents'), 'html': result.get('html') }
+    response = { 'entities': result.get('ents') }
     return json.dumps(response)
 
 
