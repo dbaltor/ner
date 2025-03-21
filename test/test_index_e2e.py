@@ -39,6 +39,7 @@ class E2ETests(unittest.TestCase):
         submit_button.click()
         table = self._find('ner-table')
         self.assertIsNotNone(table)
+        E2ETests.driver.save_screenshot('./test/screenshots/test_submitting_sentence_create_table_screenshot.png')
 
     def _find(self, val):
         return self.driver.find_element(by=By.CSS_SELECTOR, value=f'[data-test-id="{val}"]')
